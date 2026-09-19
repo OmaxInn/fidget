@@ -12,7 +12,6 @@ menuBtn.addEventListener("click", () => {
 $$("nav a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
 
 const lightbox = $("#lightbox");
-const lightboxImg = $("#lightboxImg");
 const lightboxCaption = $("#lightboxCaption");
 function closeLightbox() {
   lightbox.classList.remove("open");
@@ -20,8 +19,6 @@ function closeLightbox() {
 }
 $$(".photo").forEach(photo => {
   photo.addEventListener("click", () => {
-    lightboxImg.src = photo.dataset.image;
-    lightboxImg.alt = photo.querySelector("img").alt;
     lightboxCaption.textContent = photo.dataset.caption || "";
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
