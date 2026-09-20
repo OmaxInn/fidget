@@ -479,7 +479,7 @@ em {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   transition: transform 0.5s ease;
 }
@@ -1108,8 +1108,11 @@ footer {
     font-size: 54px;
   }
 
+  /* HERO */
   .hero-visual {
     height: 330px;
+    width: 100%;
+    overflow: visible;
   }
 
   .hero-products {
@@ -1147,14 +1150,78 @@ footer {
     left: -4px;
   }
 
+  /* =========================
+     GALLERY
+  ========================= */
+
   .gallery {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .photo {
-    height: 260px;
-    margin-bottom: 12px;
+    position: relative;
+    width: 100%;
+    height: 280px;
+    margin: 0;
+    display: block;
   }
+
+  .photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Keep the background visible around the spinner */
+  .photo-blue {
+    background:
+      radial-gradient(
+        circle at 50% 45%,
+        #418edc,
+        #092958 50%,
+        #06101f
+      );
+  }
+
+  .photo-dark {
+    background:
+      radial-gradient(
+        circle at 50% 45%,
+        #164b92,
+        #101822 55%,
+        #080b10
+      );
+  }
+
+  /* =========================
+     INTERACTIVE PRODUCT
+  ========================= */
+
+  .interactive-product {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .interactive-images img:first-child {
+    width: 55%;
+    height: 55%;
+    object-fit: contain;
+  }
+
+  .interactive-images img:last-child {
+    width: 43%;
+    height: 43%;
+    object-fit: contain;
+  }
+
+  /* =========================
+     OTHER
+  ========================= */
 
   .mini-grid {
     grid-template-columns: 1fr 1fr 1fr;
